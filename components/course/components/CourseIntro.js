@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {
   View,
   Text,
@@ -8,6 +8,11 @@ import {
 } from 'react-native';
 import Video from 'react-native-video';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ProgressBar from 'react-native-progress/Bar';
+
+function secondsToTime(time) {
+  return ~~(time / 60) + ':' + (time % 60 < 10 ? '0' : '') + (time % 60);
+}
 
 const CourseIntro = () => {
   const [error, setError] = useState(false);
@@ -17,11 +22,14 @@ const CourseIntro = () => {
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [player, setPlayer] = useState(undefined);
+
+  let playerRef = null;
+  let loopingAnimation = null;
   const onBuffer = meta => {
     meta.isBuffering && triggerBufferAnimation();
 
-    if (this.loopingAnimation && !meta.isBuffering) {
-      this.loopingAnimation.stopAnimation();
+    if (loopingAnimation && !meta.isBuffering) {
+      loopingAnimation.stopAnimation();
     }
 
     setBuffering(meta.isBuffering);
@@ -47,7 +55,7 @@ const CourseIntro = () => {
   };
 
   const triggerBufferAnimation = () => {
-    this.loopingAnimation = Animated.loop(
+    loopingAnimation = Animated.loop(
       Animated.timing(animated, {
         toValue: 1,
         duration: 350,
@@ -62,10 +70,26 @@ const CourseIntro = () => {
     transform: [{rotate: interpolatedAnimation}],
   };
 
-  const handleLoad = () => {};
-  const handleProgress = () => {};
-  const handleEnd = () => {};
-  const handleMainButtonTouch = () => {};
+  const handleLoad = meta => {
+    setDuration(meta.duration);
+  };
+  const handleProgress = prog => {
+    setProgress(prog.currentTime / duration);
+  };
+  const handleEnd = () => {
+    setPaused(true);
+  };
+  const handleMainButtonTouch = () => {
+    if (progress >= 1) {
+      playerRef.seek(0);
+    }
+    setPaused(!paused);
+  };
+  const handleProgressPress = e => {
+    const position = e.nativeEvent.locationX;
+    const progress = (position / 250) * duration;
+    playerRef.seek(progress);
+  };
   return (
     <View style={styles.screen}>
       <View style={styles.videoContainer}>
@@ -75,8 +99,7 @@ const CourseIntro = () => {
               'https://res.cloudinary.com/djhbhzex4/video/upload/v1585410558/learningApp/video_kfu80k.mp4',
           }} // Can be a URL or a local file.
           ref={ref => {
-            console.log(ref);
-            // setPlayer(ref);
+            playerRef = ref;
           }}
           paused={paused}
           onLoad={handleLoad}
@@ -92,6 +115,21 @@ const CourseIntro = () => {
           <TouchableWithoutFeedback onPress={handleMainButtonTouch}>
             <Icon name={!paused ? 'pause' : 'play'} size={30} color="#fff" />
           </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback onPress={handleProgressPress}>
+            <View>
+              <ProgressBar
+                progress={progress}
+                color="#fff"
+                unfilledColor="rgba(255, 255, 255, 0.5)"
+                borderColor="#fff"
+                width={250}
+                height={20}
+              />
+            </View>
+          </TouchableWithoutFeedback>
+          <Text style={styles.videoDuration}>
+            {secondsToTime(Math.floor(progress * duration))}
+          </Text>
         </View>
         {buffering && (
           <View
@@ -112,10 +150,6 @@ const CourseIntro = () => {
           </View>
         )}
       </View>
-
-      <Text>Courrrrrrrrrrr</Text>
-      <Text>Courrrrrrrrrrr</Text>
-      <Text>Courrrrrrrrrrr</Text>
     </View>
   );
 };
@@ -153,6 +187,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     paddingHorizontal: 10,
+  },
+  videoDuration: {
+    color: '#FFF',
+    marginLeft: 15,
   },
 });
 
