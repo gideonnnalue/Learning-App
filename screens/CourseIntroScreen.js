@@ -4,10 +4,13 @@ import {View, Text} from 'react-native';
 // Component
 import {CourseIntro} from '../components/course';
 
-const CourseIntroScreen = () => {
+const CourseIntroScreen = ({navigation}) => {
+  const courseModuleNavigate = () => {
+    navigation.navigate('CourseModulesScreen');
+  };
   return (
     <View>
-      <CourseIntro />
+      <CourseIntro navigate={courseModuleNavigate} />
     </View>
   );
 };
