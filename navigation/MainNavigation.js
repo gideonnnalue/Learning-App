@@ -6,6 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import AllCoursesScreen from '../screens/AllCoursesScreen';
 import CourseIntroScreen from '../screens/CourseIntroScreen';
 import CourseModulesScreen from '../screens/CourseModulesScreen';
+import QuizScreen from '../screens/QuizScreen';
 
 // Navigation Initialization
 const Stack = createStackNavigator();
@@ -34,6 +35,11 @@ const CoursesNavigation = () => {
         name="CourseModulesScreen"
         component={CourseModulesScreen}
         options={{title: 'Course Modules'}}
+      />
+      <Stack.Screen
+        name="QuizScreen"
+        component={QuizScreen}
+        options={{title: 'Quiz'}}
       />
     </Stack.Navigator>
   );
