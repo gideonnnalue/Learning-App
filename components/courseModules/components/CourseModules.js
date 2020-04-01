@@ -21,12 +21,15 @@ const modules = [
   {name: 'Introduction', type: 'article'},
 ];
 
-const CourseModules = () => {
+const CourseModules = props => {
   return (
     <ScrollView>
       <View style={styles.screen}>
         {modules.map((module, i) => (
-          <TouchableOpacity key={i} style={styles.itemBtn}>
+          <TouchableOpacity
+            key={i}
+            style={styles.itemBtn}
+            onPress={props.navigate}>
             <View style={styles.itemContainer}>
               <Text style={styles.itemText}>{module.name}</Text>
               <Text style={styles.itemType}>{module.type}</Text>

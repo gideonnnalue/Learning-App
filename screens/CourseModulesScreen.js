@@ -5,13 +5,12 @@ import {View, StyleSheet} from 'react-native';
 import {CourseModules} from '../components/courseModules';
 
 const CourseModulesScreen = ({navigation}) => {
-  const courseModuleNavigate = () => {
-    navigation.navigate('CourseModulesScreen');
+  const quizScreenNavigate = () => {
+    navigation.navigate('QuizScreen');
   };
-  //   navigate={courseModuleNavigate}
   return (
     <View style={styles.screen}>
-      <CourseModules />
+      <CourseModules navigate={quizScreenNavigate} />
     </View>
   );
 };
