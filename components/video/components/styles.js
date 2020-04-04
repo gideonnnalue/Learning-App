@@ -1,9 +1,13 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  videoContainer: {
+  videoContainerHalf: {
     width: '100%',
     height: 200,
+  },
+  videoContainerFull: {
+    width: '100%',
+    height: '100%',
   },
   videoPanel: {
     width: '100%',

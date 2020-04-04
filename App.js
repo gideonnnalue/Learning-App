@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler';
 import React, {Fragment} from 'react';
 
-
 import {
   Container,
   Header,

@@ -13,7 +13,10 @@ const CourseIntro = props => {
   return (
     <ScrollView>
       <View style={styles.screen}>
-        <Video />
+        <Video
+          courseLink="https://res.cloudinary.com/djhbhzex4/video/upload/v1585410558/learningApp/video_kfu80k.mp4"
+          videoMode="half"
+        />
         <View style={styles.detailsContainer}>
           <Text style={styles.descText}>Description</Text>
           <Text style={styles.titleText}>
