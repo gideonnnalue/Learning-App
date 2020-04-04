@@ -1,0 +1,2 @@
+export const GET_COURSE = 'GET_COURSE';
+export const GET_COURSE_SUCCESS = 'GET_COURSE_SUCCESS';

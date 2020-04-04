@@ -1,13 +1,10 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
-
-// Questions
-import questions from './questions';
+import {View, Text, Image} from 'react-native';
 
 // StyleSheet
 import styles from './styles';
 
-const QuizFinished = ({totalScore}) => {
+const QuizFinished = ({totalScore, questions}) => {
   const formatResponse = () => {
     const percentage = Math.ceil((totalScore / questions.length) * 100);
     if (percentage > 50) return 'Good Job';

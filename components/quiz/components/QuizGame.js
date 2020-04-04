@@ -1,4 +1,4 @@
-import React, {useState, Fragment} from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 import {Button, Text} from 'native-base';
 
@@ -8,10 +8,7 @@ import Question from './Question';
 // StyleSheet
 import styles from './styles';
 
-// questions
-import questions from './questions';
-
-const QuizGame = ({changeQuizState, changeTotalScore}) => {
+const QuizGame = ({changeQuizState, changeTotalScore, questions}) => {
   const [currentQues, setCurrentQues] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
   const [currentQuestionState, setCurrentQuestionState] = useState();

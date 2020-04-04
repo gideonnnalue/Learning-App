@@ -4,10 +4,11 @@ import {View, Text, StyleSheet} from 'react-native';
 // Component
 import {Quiz} from '../components/quiz';
 
-const QuizScreen = () => {
+const QuizScreen = ({route}) => {
+  const {content} = route.params;
   return (
     <View styles={styles.screen}>
-      <Quiz />
+      <Quiz questions={content.questions} />
     </View>
   );
 };

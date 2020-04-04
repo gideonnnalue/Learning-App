@@ -1,15 +1,18 @@
 import React from 'react';
-import {View, StyleSheet, Dimensions} from 'react-native';
+import {View} from 'react-native';
 import Pdf from 'react-native-pdf';
 
-const courseViewPDF = () => {
+// styles
+import styles from './styles';
+
+const courseViewPDF = ({data}) => {
   const source = {
-    uri: 'http://samples.leanpub.com/thereactnativebook-sample.pdf',
+    uri: data,
     cache: true,
   };
   let pdfRef = null;
   return (
-    <View style={styles.container}>
+    <View style={styles.pdfContainer}>
       <Pdf
         source={source}
         ref={pdf => {
@@ -32,18 +35,5 @@ const courseViewPDF = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-  },
-  pdf: {
-    flex: 1,
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-  },
-});
 
 export default courseViewPDF;

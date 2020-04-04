@@ -7,7 +7,7 @@ const CourseCard = props => {
     <Card>
       <CardItem cardBody>
         <Image
-          source={props.courseImg}
+          source={{uri: props.courseImg}}
           style={{height: 100, width: null, flex: 1}}
         />
       </CardItem>
@@ -15,7 +15,7 @@ const CourseCard = props => {
         <Body>
           <Text>{props.courseName}</Text>
           <View style={styles.buttonContainer}>
-            <Button block onPress={props.navigate}>
+            <Button block onPress={props.navigate.bind(this, props.courseId)}>
               <Text>Start Lesson</Text>
             </Button>
           </View>
