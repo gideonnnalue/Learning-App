@@ -11,7 +11,7 @@ function secondsToTime(time) {
   return ~~(time / 60) + ':' + (time % 60 < 10 ? '0' : '') + (time % 60);
 }
 
-const VideoComponent = () => {
+const VideoComponent = ({courseLink, videoMode}) => {
   const [error, setError] = useState(false);
   const [buffering, setBuffering] = useState(true);
   const [animated, setAnimated] = useState(new Animated.Value(0));
@@ -88,12 +88,16 @@ const VideoComponent = () => {
     playerRef.seek(progress);
   };
   return (
-    <View style={styles.videoContainer}>
+    <View
+      style={
+        videoMode === 'half'
+          ? styles.videoContainerHalf
+          : styles.videoContainerFull
+      }>
       <Video
         source={{
-          uri:
-            'https://res.cloudinary.com/djhbhzex4/video/upload/v1585410558/learningApp/video_kfu80k.mp4',
-        }} // Can be a URL or a local file.
+          uri: courseLink,
+        }}
         ref={ref => {
           playerRef = ref;
         }}
@@ -105,7 +109,7 @@ const VideoComponent = () => {
         onBuffer={onBuffer}
         onError={videoError}
         style={styles.videoPanel}
-        resizeMode="cover"
+        resizeMode="contain"
       />
       <View style={styles.videoControls}>
         <TouchableWithoutFeedback onPress={handleMainButtonTouch}>
