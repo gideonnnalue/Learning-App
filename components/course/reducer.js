@@ -1,13 +1,13 @@
-import {GET_COURSES_SUCCESS} from './actionTypes';
+import {GET_COURSE_SUCCESS} from './actionTypes';
 
 const INITIAL_STATE = {
-  allCourses: [],
+  course: null,
 };
 
 export default (state = INITIAL_STATE, {type, payload}) => {
   switch (type) {
-    case GET_COURSES_SUCCESS:
-      return {...state, allCourses: payload};
+    case GET_COURSE_SUCCESS:
+      return {...state, course: payload};
     default:
       return state;
   }

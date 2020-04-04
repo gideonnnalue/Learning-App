@@ -28,6 +28,12 @@ const styles = StyleSheet.create({
     color: 'rgba(0, 0, 0, 0.5)',
     fontSize: 12,
   },
+  centered: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default styles;

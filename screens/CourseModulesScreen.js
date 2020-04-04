@@ -9,7 +9,7 @@ const CourseModulesScreen = ({navigation}) => {
     console.log(data);
     if (data.type === 'article' || data.type === 'video' || data.type === 'pdf')
       navigation.navigate('CourseViewScreen', data);
-    else navigation.navigate('QuizScreen');
+    else navigation.navigate('QuizScreen', data);
   };
   return (
     <View style={styles.screen}>

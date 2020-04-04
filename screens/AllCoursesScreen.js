@@ -6,8 +6,8 @@ import {AllCourses} from '../components/allCourses';
 import Colors from '../constants/Colors';
 
 const AllCoursesScreen = ({navigation}) => {
-  const courseIntroNavigate = () => {
-    navigation.navigate('CourseIntroScreen');
+  const courseIntroNavigate = id => {
+    navigation.navigate('CourseIntroScreen', {courseId: id});
   };
   return (
     <View>

@@ -5,7 +5,7 @@ import StartPage from './StartPage';
 import QuizGame from './QuizGame';
 import QuizFinished from './QuizFinished';
 
-const Quiz = () => {
+const Quiz = ({questions}) => {
   const [quizState, setQuizState] = useState('init');
   const [totalScore, setTotalScore] = useState(0);
 
@@ -19,12 +19,14 @@ const Quiz = () => {
       <QuizFinished
         changeQuizState={state => changeQuizState(state)}
         totalScore={totalScore}
+        questions={questions}
       />
     );
   return (
     <QuizGame
       changeQuizState={state => changeQuizState(state)}
       changeTotalScore={score => changeTotalScore(score)}
+      questions={questions}
     />
   );
 };

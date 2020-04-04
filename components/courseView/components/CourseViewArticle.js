@@ -1,16 +1,15 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text} from 'react-native';
+
+// StyleSheet
+import styles from './styles';
 
 const CourseViewArticle = ({data}) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.articleContainer}>
       <Text>{data}</Text>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {padding: 10},
-});
 
 export default CourseViewArticle;
