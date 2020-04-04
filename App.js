@@ -1,20 +1,17 @@
 import 'react-native-gesture-handler';
-import React, {Fragment} from 'react';
+import React from 'react';
+import {Provider} from 'react-redux';
 
-import {
-  Container,
-  Header,
-  Content,
-  Card,
-  CardItem,
-  Body,
-  Text,
-} from 'native-base';
+import store from './store';
 
 import MainNavigation from './navigation/MainNavigation';
 
 const App = () => {
-  return <MainNavigation />;
+  return (
+    <Provider store={store}>
+      <MainNavigation />
+    </Provider>
+  );
 };
 
 export default App;
