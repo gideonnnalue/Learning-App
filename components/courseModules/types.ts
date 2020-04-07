@@ -1,3 +1,3 @@
 export interface CourseModuleProps {
-  navigate: () => void;
+  navigate: (id: number) => void;
 }

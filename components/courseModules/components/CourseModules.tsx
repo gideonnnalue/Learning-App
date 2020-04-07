@@ -7,6 +7,7 @@ import {
   ScrollView,
 } from 'react-native';
 import {useSelector} from 'react-redux';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 // StyleSheet
 import styles from './styles';
@@ -15,8 +16,7 @@ import Colors from '../../../constants/Colors';
 import {CourseModuleProps} from '../types';
 
 const CourseModules = ({navigate}: CourseModuleProps) => {
-  const {course} = useSelector((state) => state.course);
-
+  const {course} = useSelector(state => state.course);
   if (!course) {
     return (
       <View style={styles.centered}>
@@ -24,19 +24,24 @@ const CourseModules = ({navigate}: CourseModuleProps) => {
       </View>
     );
   }
+  const {courseModules, viewedCourses} = course;
 
-  const {courseModules} = course;
   return (
     <ScrollView>
       <View style={styles.screen}>
-        {courseModules.map((module) => (
+        {courseModules.map(module => (
           <TouchableOpacity
             key={module.id}
             style={styles.itemBtn}
-            onPress={navigate.bind(this, module)}>
+            onPress={() => navigate(module)}>
             <View style={styles.itemContainer}>
               <Text style={styles.itemText}>{module.name}</Text>
-              <Text style={styles.itemType}>{module.type}</Text>
+              <View style={styles.leftContainer}>
+                <Text style={styles.itemType}>{module.type}</Text>
+                {viewedCourses.includes(module.id) ? (
+                  <Icon name="check" size={20} color="green" />
+                ) : null}
+              </View>
             </View>
           </TouchableOpacity>
         ))}

@@ -3,7 +3,7 @@ import {types as courseTypes} from '../allCourses';
 
 export interface CourseIntroProps {
   courseId: number;
-  navigate: () => void;
+  navigate: (id: any) => void;
 }
 
 export interface CourseItem {

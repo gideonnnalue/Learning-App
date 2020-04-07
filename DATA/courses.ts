@@ -24,7 +24,8 @@ const response = {
           id: 1,
           name: 'Key Concepts: Part 1',
           type: 'article',
-          content: 'blah blah blah bloh bloh nnnnn',
+          content:
+            'The financial system today is built on the Trust of human driven systems to verify transactions of fair trade for all members participating. This has led to inefficent and expensive systems. With most funds managed in one place, we trust humans to be responsible rather than the system itself. Because funds are managed by one entity such as banks, when they fail, everyone fails. Whether they get hacked or funds are misappropriated, millions of people are affected similar to the 2008 Financial Crisis.',
         },
         {
           id: 2,
@@ -37,13 +38,15 @@ const response = {
           id: 3,
           name: 'Long and Short Positions',
           type: 'article',
-          content: 'blah blah blah shit hsie kskss ksks',
+          content:
+            'Of course, banks are not the only time markets, institutions, or entire democracies have misused power given to them. There seems to be a common theme with central authority leveraging control of a network designed for all. And so......Bitcoin was created in 2009 An open, transparent and direct system —  Designed without Human Intervention Using software we can now build new system on the internet that distributes the responsibility of 3rd party due dilignence onto computers. This enables the ability to write rules that can not be broken and altered by humans. he software used for these systems is called BLOCKCHAIN.',
         },
         {
           id: 4,
           name: 'What is Arbitrage?',
           type: 'article',
-          content: ' damn andmmmd nsnns',
+          content:
+            "IN CONCLUSION: it's all about... Trustless Systems & Ownership::: Trustless Systems: Before Bitcoin, trust was given to humans and corporations to make sure the transactions that occured on the system's they created were of fair value. Now we can build trust into systems to ensure fair valued transactions for anyone using that network. Ownership: With the invention of a peer to peer system, user's now have full control over their assets and can transact with anyone in the network directly. With the removal of the middleman, user's have more control over their assets and can use them without the need of an intermediary's approval.",
         },
         {
           id: 5,
@@ -62,7 +65,8 @@ const response = {
           id: 7,
           name: 'Swing Trading',
           type: 'article',
-          content: 'blueuuwew',
+          content:
+            'From Money to Data assets can be transfered on the internet in a direct and transparent manner, without the delays and costs associated with traditional 3rd party methods. This underlying technology allows for the first time people to deal with one another without relying on a 3rd party. However that does not mean  abandoning your personal responsibility to understand how to use this new system to its fullest before using it. With the ability to control our own assets, comes with its fair share of ownership responsibility. We are working on creating a simulation on how to use this system.    We hope you try it :)',
         },
         {
           id: 8,
@@ -71,32 +75,42 @@ const response = {
           content: {
             questions: [
               {
-                quest: 'blah blah blah blah blah blah blah blah blah',
+                quest: 'The current financial system which is built and managed by humans, they tend to sometimes?',
                 options: {
-                  a: 'blue',
-                  b: 'red',
-                  c: 'yellow',
-                  d: 'black',
+                  a: 'thrive',
+                  b: 'fail',
+                  c: 'dance',
+                  d: 'sleep',
+                },
+                ans: 'b',
+              },
+              {
+                quest: 'When was Bitcoin created?',
+                options: {
+                  a: '2007',
+                  b: '2012',
+                  c: '1999',
+                  d: '2009',
                 },
                 ans: 'd',
               },
               {
-                quest: 'red red red red',
+                quest: 'Using software we can now build new system on the internet that distributes the responsibility of 3rd party due dilignence onto computers. This enables the ability to write rules that can not be broken and altered by humans. The software used for these systems is called?',
                 options: {
-                  a: 'blue',
-                  b: 'red',
-                  c: 'yellow',
-                  d: 'black',
+                  a: 'Blockchain',
+                  b: 'Computers',
+                  c: 'Money',
+                  d: 'Land',
                 },
-                ans: 'c',
+                ans: 'a',
               },
               {
-                quest: 'yellow yellow yellow yellow yellow',
+                quest: 'Instead of having isolated control over networks, we can break down the isolation and distribute the control over all the participants in the network.By definition, engineers call this system?',
                 options: {
-                  a: 'blue',
-                  b: 'red',
-                  c: 'yellow',
-                  d: 'black',
+                  a: 'Distributed Ledger Technology',
+                  b: 'Distributed Long Terminal',
+                  c: 'Decentralised Ledger Tech',
+                  d: 'Decentralised Ledger Term',
                 },
                 ans: 'a',
               },

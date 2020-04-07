@@ -1,7 +1,7 @@
 import {GET_COURSES, GET_COURSES_SUCCESS} from './actionTypes';
 
 export interface Props {
-  navigate: () => void;
+  navigate: (id: any) => void;
 }
 
 export interface Item {
@@ -29,11 +29,10 @@ export interface Course {
   introVideoLink: string;
   briefInfo: BriefInfoItems[];
   courseModules: CourseModules[];
+  viewedCourses: number[];
 }
 
-export interface Courses {
-  courses: Course[];
-}
+export type Courses = Course[];
 
 export interface GetCoursesActionType {
   type: typeof GET_COURSES;
@@ -42,4 +41,14 @@ export interface GetCoursesActionType {
 export interface GetCoursesSuccessActionType {
   type: typeof GET_COURSES_SUCCESS;
   payload: Courses;
+}
+
+export interface ReducerInterface {
+  allCourses: Courses;
+  savedCourses: number[];
+}
+
+export interface ModulesInterface {
+  courseId: number;
+  id: number;
 }

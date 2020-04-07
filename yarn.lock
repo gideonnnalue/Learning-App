@@ -871,7 +871,7 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@react-native-community/art@^1.0.3":
+"@react-native-community/art@^1.1.2":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/art/-/art-1.2.0.tgz#386d95393f6042d9006f9d4bc6063fb898794460"
   integrity sha512-a+ZcRGl/BzLa89yi33Mbn5SHavsEXqKUMdbfLf3U8MDLElndPqUetoJyGkv63+BcPO49UMWiQRP1YUz6/zfJ+A==
@@ -1004,6 +1004,13 @@
     react-is "^16.13.0"
     shortid "^2.2.15"
     use-subscription "^1.4.0"
+
+"@react-navigation/material-top-tabs@^5.1.7":
+  version "5.1.7"
+  resolved "https://registry.yarnpkg.com/@react-navigation/material-top-tabs/-/material-top-tabs-5.1.7.tgz#4975d5d02fe1beb6665bd1e2b49a627c5800d50f"
+  integrity sha512-GffgvFmbr/wpV7B+sBou+OUf1qqwCjvbeNoZpKjekU795ZqnC+KPRvLNeGX7Pd9CQ1+K/7O4CHvs9O22v5mEaQ==
+  dependencies:
+    color "^3.1.2"
 
 "@react-navigation/native@^5.1.3":
   version "5.1.3"
@@ -5952,12 +5959,12 @@ react-native-pdf@^6.1.1:
     crypto-js "^3.2.0"
     prop-types "^15.5.10"
 
-react-native-progress@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/react-native-progress/-/react-native-progress-4.0.3.tgz#0020a9ce9fa5cb14c7aac8f993b31f27a7ff2150"
-  integrity sha512-UMjY9W82bU/NLJ2PxkQ3rZFHZPzVTwKowuOfO1bWEainuyjAXwlcZdyQnZxuqIgHrLkZpg9ppdu+g2mflT86ZQ==
+react-native-progress@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-progress/-/react-native-progress-4.1.1.tgz#26b4401203517f010e6a4ef77677daecc4b30b71"
+  integrity sha512-aOfCAdtuPlHb3C7x7PIBTAKH4psxYqi584GcwjwURfPTe8Ir1bDMEa5/x6M07T2afasXGe9XjnVtF6C+Q+q2mA==
   dependencies:
-    "@react-native-community/art" "^1.0.3"
+    "@react-native-community/art" "^1.1.2"
     prop-types "^15.7.2"
 
 react-native-reanimated@^1.7.1:
@@ -5978,6 +5985,16 @@ react-native-screens@^2.4.0:
   integrity sha512-7GcXlaj7IIrM4l5Ub7BPTkNQJ2slHGt2bhmfWmW73NTXEv+7pjHlp+JpQO32Yn+O8UQGPFf0rsesfYUdER7ppQ==
   dependencies:
     debounce "^1.2.0"
+
+react-native-splash-screen@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-splash-screen/-/react-native-splash-screen-3.2.0.tgz#d47ec8557b1ba988ee3ea98d01463081b60fff45"
+  integrity sha512-Ls9qiNZzW/OLFoI25wfjjAcrf2DZ975hn2vr6U9gyuxi2nooVbzQeFoQS5vQcbCt9QX5NY8ASEEAtlLdIa6KVg==
+
+react-native-tab-view@^2.13.0:
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.13.0.tgz#23037aa43b0f8f682ddc20415a4baaaf6f82ae8f"
+  integrity sha512-AeYbp/u91+D/C9+PmVEPBmFb3ixv8IkLMC3Sc5MajJ/fg0Zl3Of+BcEknBvTnKoe7Fj2y8+Qf9zorBbh5xzh4A==
 
 react-native-typescript-transformer@^1.2.13:
   version "1.2.13"

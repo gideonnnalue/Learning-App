@@ -27,6 +27,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  progressContainer: {
+    width: '100%',
+  }
 });
 
 export default styles;
