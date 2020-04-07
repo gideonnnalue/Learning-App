@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
   itemType: {
     color: 'rgba(0, 0, 0, 0.5)',
     fontSize: 12,
+    marginRight: 10
   },
   centered: {
     width: '100%',
@@ -34,6 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  leftContainer: {flexDirection: 'row', alignItems: 'center'},
 });
 
 export default styles;

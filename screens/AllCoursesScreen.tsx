@@ -1,12 +1,11 @@
 import React from 'react';
-import {View, Text, StatusBar, SafeAreaView} from 'react-native';
+import {View, StatusBar} from 'react-native';
 import {AllCourses} from '../components/allCourses';
 
 // Constants
 import Colors from '../constants/Colors';
 
 const AllCoursesScreen = ({navigation}) => {
-  console.log(typeof navigation)
   const courseIntroNavigate = id => {
     navigation.navigate('CourseIntroScreen', {courseId: id});
   };

@@ -5,13 +5,14 @@ import {View} from 'react-native';
 import {CourseIntro} from '../components/course';
 
 const CourseIntroScreen = ({navigation, route}) => {
+  console.disableYellowBox = true;
   const {courseId} = route.params;
-  const courseModuleNavigate = () => {
-    navigation.navigate('CourseModulesScreen');
+  const courseModuleNavigate = (id) => {
+    navigation.navigate('CourseModulesScreen', {courseId: id});
   };
   return (
     <View>
-      <CourseIntro navigate={courseModuleNavigate} courseId={courseId} />
+      <CourseIntro navigate={(id) => courseModuleNavigate(id)} courseId={courseId} />
     </View>
   );
 };

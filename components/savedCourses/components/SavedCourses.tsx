@@ -5,27 +5,35 @@ import {useDispatch, useSelector} from 'react-redux';
 // Component
 import CourseCard from '../../../UI/CourseCard';
 
-import {getCourses, saveCourse} from '../actions';
 import Colors from '../../../constants/Colors';
-import styles from './styles';
+import {actions, styles, types} from '../../allCourses';
 
-// Types
-import {Props, Item} from '../types';
+// actions
+const {getCourses, saveCourse} = actions;
 
-const AllCourses = (props: Props): JSX.Element => {
+const SavedCourses = (props: types.Props): JSX.Element => {
   const dispatch: Function = useDispatch();
-  
-  const {allCourses, savedCourses} = useSelector<object[]>(state => state.courses);
+
+  const {allCourses, savedCourses} = useSelector<object[]>(
+    state => state.courses,
+  );
+
+  let renderedCourses: object[] = [];
+  for (let course of allCourses) {
+    if (savedCourses.includes(course.id)) {
+      renderedCourses.push(course);
+    }
+  }
+
+  const onSaveCourse = (id: number) => {
+    dispatch(saveCourse(id));
+  };
 
   useEffect(() => {
     dispatch(getCourses());
   }, [dispatch]);
 
-  const onSaveCourse = (id: number) => {
-    dispatch(saveCourse(id));
-  }
-
-  if (allCourses.length === 0) {
+  if (renderedCourses.length === 0) {
     return (
       <View style={styles.centered}>
         <ActivityIndicator size="large" color={Colors.primary} />
@@ -35,7 +43,7 @@ const AllCourses = (props: Props): JSX.Element => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={allCourses}
+        data={renderedCourses}
         onRefresh={() => dispatch(getCourses())}
         refreshing={allCourses.length > 0 ? false : true}
         renderItem={({item}) => (
@@ -54,4 +62,4 @@ const AllCourses = (props: Props): JSX.Element => {
   );
 };
 
-export default AllCourses;
+export default SavedCourses;

@@ -2,9 +2,11 @@ import React from 'react';
 import {Platform} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 // Screens
 import AllCoursesScreen from '../screens/AllCoursesScreen';
+import SavedCoursesScreen from '../screens/SavedCoursesScreen';
 import CourseIntroScreen from '../screens/CourseIntroScreen';
 import CourseModulesScreen from '../screens/CourseModulesScreen';
 import CourseViewScreen from '../screens/CourseViewScreen';
@@ -12,6 +14,7 @@ import QuizScreen from '../screens/QuizScreen';
 
 // Navigation Initialization
 const Stack = createStackNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 const defaultScreenOptions = {
   headerStyle: {
@@ -20,13 +23,30 @@ const defaultScreenOptions = {
   headerTintColor: Platform.OS === 'android' ? 'white' : '#0a5ee5',
 };
 
+const TabNavigation = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name="AllCoursesScreen"
+        component={AllCoursesScreen}
+        options={{title: 'All'}}
+      />
+      <Tab.Screen
+        name="SavedCoursesScreen"
+        component={SavedCoursesScreen}
+        options={{title: 'Saved'}}
+      />
+    </Tab.Navigator>
+  );
+};
+
 const CoursesNavigation = () => {
   return (
     <Stack.Navigator screenOptions={defaultScreenOptions}>
       <Stack.Screen
         name="AllCoursesScreen"
-        component={AllCoursesScreen}
-        options={{title: 'All Courses'}}
+        component={TabNavigation}
+        options={{title: 'Courses'}}
       />
       <Stack.Screen
         name="CourseIntroScreen"
