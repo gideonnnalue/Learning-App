@@ -125,3 +125,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Your Name - [@Gideon5053](https://twitter.com/Gideon5053) - gideonnnalue@gmail.com
 
 Project Link: [https://github.com/gideonnnalue/Learning-App](https://github.com/gideonnnalue/Learning-App)
+
+[product-screenshot]: assets/images/Screenshot.png
